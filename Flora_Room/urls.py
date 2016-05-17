@@ -19,5 +19,5 @@ from django.shortcuts import render
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', lambda r: render(r, 'main.html'))
+    url(r'^$', lambda r: render(r, 'mainPage.html'))
 ]
