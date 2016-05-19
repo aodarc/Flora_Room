@@ -1,0 +1,9 @@
+.form_margin_zero{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.navbar-fixed-top{
+    padding-bottom: 0;
+}
