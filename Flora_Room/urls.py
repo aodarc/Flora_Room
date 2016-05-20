@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from FloraRoomApp.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', main_page, name='main_page'),
+    url(r'^registration/$', registration_user, name='registration'),
+    url(r'^login/$', log_in, name='login'),
+    url(r'^logout/$', log_out, name='logout')
+
+
 ]
