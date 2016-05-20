@@ -51,20 +51,26 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="nav navbar-nav navbar-right">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label class="sr-only" for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" for="inputPassword">Пароль</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Пароль">
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox"> Запам'ятати</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Ввійти</button>
-                </form>
+                {% if request.user.is_authenticated %}
+                    <p><a href="{% url 'logout' %}">Log out</a></p>
+                    <p><a href="/admin">Admin Page</a></p>
+                {% else %}
+                    <form class="form-inline" method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="sr-only" for="inputEmail">Email</label>
+                            <input name="username" type="text" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="inputPassword">Пароль</label>
+                            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Пароль">
+                        </div>
+                        <div class="form-group">
+                            <label><a href="{% url 'registration' %}">Реєстрація</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ввійти</button>
+                    </form>
+                {% endif %}
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 

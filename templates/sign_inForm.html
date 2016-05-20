@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block main %}
+    <div class="col-lg-4" xmlns="http://www.w3.org/1999/html">
+      <form class="form-signin" method="post" action="">
+      {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+          {{ auth_form.email.error_messages }}
+          {{ auth_form.email }}
+        <label for="inputPassword" class="sr-only">Password</label>
+          {{ auth_form.password }}
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <a href="{% url 'registration' %}"><br><button class="btn btn-lg btn-primary btn-block" type="button">Registration</button></a>
+      </form>
+    </div>
+
+{% endblock %}
