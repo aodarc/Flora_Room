@@ -7,3 +7,13 @@
 .navbar-fixed-top{
     padding-bottom: 0;
 }
+.nav-menu-padding{
+    padding-top: 20px;
+}
+
+.admin-menu{
+    margin-right: 20px;
+}
+#upload_file{
+    padding-top: 200px;
+}

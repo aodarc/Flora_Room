@@ -4,11 +4,11 @@
   background: rgb(71,17,6);
   border-radius: 1px;
 }
-section {
-    padding: 200px 0;
+#contact {
+    padding: 220px 0;
 }
 #sing {
-	color: rgb(199,48,17);
+    color: rgb(199,48,17);
     text-align: center;
 }
 

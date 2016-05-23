@@ -22,7 +22,9 @@ urlpatterns = [
     url(r'^$', main_page, name='main_page'),
     url(r'^registration/$', registration_user, name='registration'),
     url(r'^login/$', log_in, name='login'),
-    url(r'^logout/$', log_out, name='logout')
+    url(r'^logout/$', log_out, name='logout'),
+    url(r'^upload/$', upload_file, name='upload')
+
 
 
 ]
