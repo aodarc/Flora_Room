@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from FloraRoomApp import models
-from FloraRoomApp.forms import UploadFileForm
 
 # Create your views here.
 
@@ -46,7 +45,8 @@ def registration_user(request):
 
 
 def handle_uploaded_file(f):
-    with open('./media/' + str(f), 'wb+') as destination:
+    file_name = './static/media/' + str(f)
+    with open(file_name, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
 
@@ -55,5 +55,17 @@ def upload_file(request):
     if request.method == 'POST':
         print(request.FILES['file'])
         handle_uploaded_file(request.FILES['file'])
-        redirect('/')
+        file_link = 'media/' + str(request.FILES['file'])
+        return render(request, 'result_page.html', {'file_link':file_link})
     return render(request, 'upload.html')
+
+# def upload_file(request):
+#     if request.method == 'POST':
+#         form = UploadFileForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             # file is saved
+#             form.save()
+#             return redirect('/')
+#     else:
+#         form = UploadFileForm()
+#     return render(request, 'upload.html', {'form': form})

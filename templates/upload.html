@@ -4,7 +4,7 @@
     <section id="upload_file">
         <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="file" name="file">
+            <input name="file" type="file">
             <input type="submit">
         </form>
     </section>

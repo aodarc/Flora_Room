@@ -1,0 +1,7 @@
+{% extends 'mainPage.html' %}
+{% load staticfiles %}
+{% block main %}
+    <div class="container" id="upload_file">
+        <img class="img-responsive" src="{% static file_link %}" alt="{{ file_link }}">
+    </div>
+{% endblock %}

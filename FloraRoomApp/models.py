@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-SHORT_TEXT = 2000
+SHORT_TEXT = 2300
 
 
 class Article(models.Model):

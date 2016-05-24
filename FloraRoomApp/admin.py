@@ -5,7 +5,7 @@ from FloraRoomApp import models
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ['title', 'text', 'author', 'category']
+    fields = ['title', 'text', 'author', 'category', 'some_file']
     list_filter = ['create_date']
 
 admin.site.register(models.Article, ArticleAdmin)
